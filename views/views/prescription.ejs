@@ -1,0 +1,38 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <a href="/prescription/add">
+    <button class="btn btn-success mb-2">Prescription+</button>
+  </a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Patient ID</th>
+        <th scope="col">Detail</th>
+        <th scope="col">Date</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <% for(prescription of prescriptions) { %>
+      <tr>
+        <td><%= prescription.Pre_ID %></td>
+        <td><%= prescription.Patient_ID %></td>
+        <td><%= prescription.Detail %></td>
+        <td>
+          <%=prescription.Date.toString().split(" ").slice(0,4).join(" ")%>
+        </td>
+        <td>
+          <form
+            action="/prescription/<%= prescription.Pre_ID %>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn btn-secondary p-1">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>

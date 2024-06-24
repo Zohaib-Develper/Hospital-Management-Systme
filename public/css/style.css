@@ -1,0 +1,92 @@
+body {
+  background-color: white;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.profile-img-card {
+  height: 4.5rem;
+  width: auto;
+}
+
+.main-section {
+  flex: 1;
+  margin-left: 10%;
+  background-color: white;
+  width: 90%;
+}
+.leftsidbar {
+  color: white;
+  margin-top: 4rem;
+  background-color: rgb(72, 67, 79);
+  display: block;
+  position: fixed;
+  width: 10%;
+  height: 90%;
+  overflow-y: auto;
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+}
+
+.leftsidbar li {
+  padding: 10px;
+}
+.leftsidbar a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.leftsidbar i {
+  padding-top: 0.2rem;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+.leftsidbar .item-text {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 0.2rem;
+  color: white;
+}
+.leftsidbar li:hover .item-text {
+  color: yellow;
+  font-weight: bold;
+}
+
+::-webkit-scrollbar {
+  width: 5px; /* width of the scrollbar */
+}
+::-webkit-scrollbar-track {
+  background: #e8e7ef; /* color of the track */
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(26, 25, 29); /* color of the scrollbar */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4c40f4; /* color of the scrollbar on hover */
+}
+/* 
+Login */
+
+.login-card {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-card .card {
+  background-color: rgb(224, 218, 218);
+  padding: 2rem;
+  width: 30rem;
+  height: 25rem;
+}
+
+/* Navbar */
+.navbar-logo {
+  width: auto;
+  height: 2.5rem;
+}

@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <div class="row">
+    <form action="/billing" method="POST" class="col-6 offset-3">
+      <div class="mb-3">
+        <label for="patient" class="form-label">Select Patient ID</label>
+        <select
+          class="form-select"
+          name="p_id"
+          aria-label="Default select example"
+          required
+        >
+          <%for (p_id of p_ids){%>
+          <option value="<%=p_id.p_id%>"><%=p_id.p_id%></option>
+          <%}%>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input
+          type="date"
+          class="form-control"
+          name="date"
+          placeholder="Enter date"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="total" class="form-label">Total</label>
+        <input
+          type="number"
+          class="form-control"
+          name="total"
+          placeholder="Enter total"
+          required
+        />
+      </div>
+      <button class="btn btn-success mb-4">Add</button>
+    </form>
+  </div>
+</body>

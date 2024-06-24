@@ -1,0 +1,38 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <a href="/doctor/add">
+    <button class="btn btn-success mb-2">Doctor+</button>
+  </a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Specification</th>
+        <th scope="col">Qualification</th>
+        <th scope="col">Dep_ID</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <%for(doctor of doctors){%>
+      <tr>
+        <td><%= doctor.Doc_ID%></td>
+        <td><%=doctor.Name%></td>
+        <td><%=doctor.Specification%></td>
+        <td><%=doctor.Qualification%></td>
+        <td><%=doctor.Dep_ID%></td>
+        <td>
+          <form
+            action="/doctor/<%= doctor.Doc_ID%>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn btn-secondary p-1">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+</body>

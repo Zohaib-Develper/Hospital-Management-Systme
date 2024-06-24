@@ -1,0 +1,54 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <div class="row">
+    <form action="/staff" method="POST" class="col-6 offset-3">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          placeholder="Enter Staff Name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="cnin" class="form-label">CNIC</label>
+        <input
+          type="text"
+          class="form-control"
+          name="cnic"
+          placeholder="Enter Staff CNIC"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Enter age</label>
+        <input
+          type="number"
+          class="form-control"
+          name="age"
+          placeholder="Enter age"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="department" class="form-label">Select Department</label>
+        <select
+          class="form-select"
+          name="dep_id"
+          aria-label="Default select example"
+          required
+        >
+          <%for (dep_id of dep_ids){%>
+          <option value="<%=dep_id.dep_id%>"><%=dep_id.dep_id%></option>
+          <%}%>
+        </select>
+      </div>
+
+      <button class="btn btn-success mb-4">Add</button>
+    </form>
+  </div>
+</body>

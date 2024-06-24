@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <a href="/billing/add">
+    <button class="btn btn-success mb-2">Billing+</button>
+  </a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Bill ID</th>
+        <th scope="col">Patient ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Total</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <% for(billing of billings) { %>
+      <tr>
+        <td><%= billing.Bill_ID %></td>
+        <td><%= billing.Patient_ID %></td>
+        <td><%=billing.Date.toString().split(" ").slice(0,4).join(" ")%></td>
+        <td><%= billing.Total %></td>
+        <td>
+          <form
+            action="/billing/<%= billing.Bill_ID %>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn btn-secondary p-1">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>

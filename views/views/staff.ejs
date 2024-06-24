@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <a href="/staff/add">
+    <button class="btn btn-success mb-2">Staff+</button>
+  </a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">CNIC</th>
+        <th scope="col">Age</th>
+        <th scope="col">Dep_ID</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <%for(member of staff){%>
+      <tr>
+        <td><%= member.ID%></td>
+        <td><%=member.Name%></td>
+        <td><%=member.CNIC%></td>
+        <td><%=member.Age%></td>
+        <td><%=member.Dep_ID%></td>
+        <td>
+          <form action="/staff/<%= member.ID%>?_method=DELETE" method="POST">
+            <button class="btn btn-secondary p-1">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+</body>

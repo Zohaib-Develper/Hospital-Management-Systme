@@ -1,0 +1,54 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <a href="/patient/add">
+    <button class="btn btn-success mb-2">Add Patient+</button>
+  </a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Pat_ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">CNIC</th>
+        <th scope="col">Age</th>
+        <th scope="col">Disease</th>
+        <th scope="col">Dep_ID</th>
+        <th scope="col">Check in</th>
+        <th scope="col">Check Out</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <%for(patient of patients){%>
+      <tr>
+        <td><%= patient.P_ID%></td>
+        <td><%=patient.Name%></td>
+        <td><%=patient.CNIC%></td>
+        <td><%=patient.Age%></td>
+        <td><%=patient.Disease%></td>
+        <td><%=patient.Dep_ID%></td>
+        <td>
+          <!-- <%=patient.Check_In.toString().split(" ")[4]%>
+          <br /> -->
+          <%=patient.Check_In.toString().split(" ").slice(0,4).join(" ")%>
+        </td>
+        <td>
+          <!-- <%=patient.Check_Out.toString().split(" ")[4]%>
+          <br /> -->
+          <%=patient.Check_Out.toString().split(" ").slice(0,4).join(" ")%>
+        </td>
+
+        <td>
+          <form
+            action="/patient/<%= patient.P_ID%>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn btn-secondary p-2">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+</body>

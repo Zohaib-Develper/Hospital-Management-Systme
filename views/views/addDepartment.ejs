@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <div class="row">
+    <form action="/department" method="POST" class="col-6 offset-3">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          placeholder="Enter Department Name"
+          required
+        />
+      </div>
+      <div class="mb-5">
+        <label for="block" class="form-label">Select Block</label>
+        <select
+          class="form-select"
+          name="block"
+          aria-label="Default select example"
+          required
+        >
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+      </div>
+      <button class="btn btn-success">Add</button>
+    </form>
+  </div>
+</body>

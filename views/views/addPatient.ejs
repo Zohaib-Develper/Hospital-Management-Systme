@@ -1,0 +1,83 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <div class="row">
+    <form action="/Patient" method="POST" class="col-6 offset-3">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          placeholder="Enter Patient Name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="cnin" class="form-label">CNIC</label>
+        <input
+          type="text"
+          class="form-control"
+          name="cnic"
+          placeholder="Enter Patient Name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Enter age</label>
+        <input
+          type="number"
+          class="form-control"
+          name="age"
+          placeholder="Enter age"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="disease" class="form-label">Disease</label>
+        <input
+          type="text"
+          class="form-control"
+          name="disease"
+          placeholder="Enter disease"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="department" class="form-label">Select Department</label>
+        <select
+          class="form-select"
+          name="dep_id"
+          aria-label="Default select example"
+          required
+        >
+          <%for (dep_id of dep_ids){%>
+          <option value="<%=dep_id.dep_id%>"><%=dep_id.dep_id%></option>
+          <%}%>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="check_in" class="form-label">Check In</label>
+        <input
+          type="date"
+          class="form-control"
+          name="check_in"
+          placeholder="Enter check in"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="check_out" class="form-label">Check out</label>
+        <input
+          type="date"
+          class="form-control"
+          name="check_out"
+          placeholder="Enter Check out"
+          required
+        />
+      </div>
+
+      <button class="btn btn-success mb-4">Add</button>
+    </form>
+  </div>
+</body>

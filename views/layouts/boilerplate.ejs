@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hospital Management System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <%- include('../includes/navbar.ejs') %>
+
+    <div class="container-fluid p-3 main-section"><%- body -%></div>
+
+    <ul class="leftsidbar colum">
+      <li>
+        <a href="/department">
+          <i class="fa-regular fa-building"></i>
+          <div class="item-text">Departments</div>
+        </a>
+      </li>
+      <li>
+        <a href="/patient">
+          <i class="fa-solid fa-hospital-user"></i>
+          <div class="item-text">Patients</div>
+        </a>
+      </li>
+      <li>
+        <a href="/staff">
+          <i class="fa-solid fa-users"></i>
+          <div class="item-text">Staff</div>
+        </a>
+      </li>
+      <li>
+        <a href="/nurse">
+          <i class="fa-solid fa-user-nurse"></i>
+          <div class="item-text">Nurses</div>
+        </a>
+      </li>
+      <li>
+        <a href="/prescription">
+          <i class="fa-solid fa-file-medical"></i>
+          <div class="item-text">Prescription</div>
+        </a>
+      </li>
+      <li>
+        <a href="/doctor"
+          ><i class="fa-solid fa-user-doctor"></i>
+          <div class="item-text">Doctor</div>
+        </a>
+      </li>
+      <li>
+        <a href="/billing">
+          <i class="fa-solid fa-file-waveform"></i>
+          <div class="item-text">Billing</div>
+        </a>
+      </li>
+      <li>
+        <a href="/admitted">
+          <i class="fa-regular fa-hospital"></i>
+          <div class="item-text">Admitted Patients</div>
+        </a>
+      </li>
+    </ul>
+    <%- include('../includes/footer.ejs') %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

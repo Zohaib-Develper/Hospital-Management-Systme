@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <a href="/nurse/add">
+    <button class="btn btn-success mb-2">Nurse+</button>
+  </a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Qualification</th>
+        <th scope="col">Dep_ID</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <%for(nurse of nurses){%>
+      <tr>
+        <td><%= nurse.ID%></td>
+        <td><%=nurse.Name%></td>
+        <td><%=nurse.Qualification%></td>
+        <td><%=nurse.Dep_ID%></td>
+        <td>
+          <form action="/nurse/<%= nurse.ID%>?_method=DELETE" method="POST">
+            <button class="btn btn-secondary p-1">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+</body>

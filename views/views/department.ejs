@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <a href="/department/add">
+    <button class="btn btn-success mb-2">Add Department+</button>
+  </a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Dep_ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Block</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <%for(department of departments){%>
+      <tr>
+        <td><%= department.Dep_ID%></td>
+        <td><%=department.Name%></td>
+        <td><%=department.Block%></td>
+        <td>
+          <form
+            action="/department/<%= department.Dep_ID%>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn btn-secondary p-1">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+</body>

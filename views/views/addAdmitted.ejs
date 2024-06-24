@@ -1,0 +1,66 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <div class="row">
+    <form action="/admitted" method="POST" class="col-6 offset-3">
+      <div class="mb-3">
+        <label for="roomname" class="form-label">Select Room</label>
+        <select
+          class="form-select"
+          name="roomname"
+          aria-label="Default select example"
+          required
+        >
+          <%for (i=0;i<15; i++){%>
+          <option value="<%=i+1%>"><%=i+1%></option>
+          <%}%>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="patient" class="form-label">Select Patient ID</label>
+        <select
+          class="form-select"
+          name="p_id"
+          aria-label="Default select example"
+          required
+        >
+          <%for (p_id of p_ids){%>
+          <option value="<%=p_id.p_id%>"><%=p_id.p_id%></option>
+          <%}%>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <input
+          type="text"
+          class="form-control"
+          name="status"
+          placeholder="Enter status"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="checkin" class="form-label">Check In</label>
+        <input
+          type="date"
+          class="form-control"
+          name="checkin"
+          placeholder="Enter total"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="checkout" class="form-label">Check out</label>
+        <input
+          type="date"
+          class="form-control"
+          name="checkout"
+          placeholder="Enter Check out"
+          required
+        />
+      </div>
+
+      <button class="btn btn-success mb-4">Add</button>
+    </form>
+  </div>
+</body>
